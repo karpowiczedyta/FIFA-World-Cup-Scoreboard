@@ -11,28 +11,28 @@ Rozwiązanie zostało zaimplementowane w języku Java zgodnie z podejściem Test
 
 Funkcjonalności:
 
-Rozpoczęcie meczu
+Rozpoczęcie meczu:
 Dodaje nowy mecz do tablicy wyników z początkowym wynikiem 0-0.
 
 Przykład:
 Meksyk - Kanada: 0 - 0
 
-Aktualizacja wyniku
+Aktualizacja wyniku:
 Pozwala zaktualizować wynik istniejącego meczu.
 
 Przykład:
 Meksyk - Kanada: 2 - 1
 
-Zakończenie meczu
+Zakończenie meczu:
 Usuwa mecz z tablicy wyników.
 
-Pobranie podsumowania
+Pobranie podsumowania:
 
 Zwraca listę aktywnych meczów posortowaną według:
-1.Łącznej liczby zdobytych bramek (malejąco)
-2.Czasu rozpoczęcia meczu (od najnowszego), gdy suma bramek jest taka sama
+- Łącznej liczby zdobytych bramek (malejąco)
+- Czasu rozpoczęcia meczu (od najnowszego), gdy suma bramek jest taka sama
 
-Przykład
+Przykład:
 Dla następujących aktywnych meczów:
 
 - Meksyk - Kanada: 0 - 5
@@ -64,7 +64,7 @@ W projekcie zaimplementowano podstawowe mechanizmy walidacji:
 
   są traktowane jako ta sama drużyna i nie powodują duplikacji danych.
 
-Testy
+Testy:
 Projekt został przygotowany zgodnie z podejściem TDD (Test-Driven Development).
 Testy jednostkowe obejmują:
 - rozpoczęcie nowego meczu z początkowym wynikiem 0–0
