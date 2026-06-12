@@ -24,5 +24,10 @@ public class Main {
         List<Match> scoreBoardSummary = board.getScoreBoardSummary();
 
         System.out.println(scoreBoardSummary);
+
+        for (int i = 0; i < scoreBoardSummary.size(); i++) {
+            Match nextMatch = scoreBoardSummary.get(i);
+            System.out.println((i + 1) + ". " + nextMatch + " [" + nextMatch.getTotalScore() + "]");
+        }
     }
 }

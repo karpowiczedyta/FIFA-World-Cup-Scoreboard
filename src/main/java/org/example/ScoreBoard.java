@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +39,18 @@ public class ScoreBoard {
     }
 
     public List<Match> getScoreBoardSummary() {
-        return matches.values().stream().toList();
+        return matches.values()
+                .stream()
+                .sorted(
+                        Comparator
+                                .comparingInt(Match::getTotalScore)
+                                .reversed()
+                                .thenComparing(
+                                        Match::getAdditionOrder,
+                                        Comparator.reverseOrder()
+                                )
+                )
+                .toList();
     }
 
     private String buildMatchMapKey(String homeTeam, String awayTeam) {
