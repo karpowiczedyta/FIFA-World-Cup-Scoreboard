@@ -23,6 +23,17 @@ public class Main {
 
         List<Match> scoreBoardSummary = board.getScoreBoardSummary();
 
+        printScoreBoardSummary(scoreBoardSummary);
+
+        board.finishMatch("Argentina", "Australia");
+        List<Match> scoreBoardSummaryAfterRemoveOne = board.getScoreBoardSummary();
+
+        printScoreBoardSummary(scoreBoardSummaryAfterRemoveOne);
+
+
+    }
+
+    static void printScoreBoardSummary(List<Match> scoreBoardSummary){
         System.out.println(scoreBoardSummary);
 
         for (int i = 0; i < scoreBoardSummary.size(); i++) {

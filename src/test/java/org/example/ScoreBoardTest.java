@@ -9,6 +9,36 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ScoreBoardTest {
 
     @Test
+    void shouldNotAllowNullTeamNames() {
+        ScoreBoard board = new ScoreBoard();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.startMatch(null, "Canada"));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.startMatch("Mexico", null));
+    }
+
+    @Test
+    void shouldNotAllowBlankTeamNames() {
+        ScoreBoard board = new ScoreBoard();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.startMatch("", "Canada"));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.startMatch("Mexico", "   "));
+    }
+
+    @Test
+    void shouldNotAllowSameTeamMatch() {
+        ScoreBoard board = new ScoreBoard();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.startMatch("Mexico", "Mexico"));
+    }
+
+    @Test
     void shouldStartMatchWithInitialScoreZeroZero() {
         ScoreBoard board = new ScoreBoard();
 
@@ -48,6 +78,29 @@ public class ScoreBoardTest {
     }
 
     @Test
+    void shouldThrowIllegalArgumentExceptionWhenFinishingNonExistingMatch() {
+        ScoreBoard board = new ScoreBoard();
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> board.finishMatch("Mexico", "Canada")
+        );
+    }
+
+    @Test
+    void shouldNotAllowNegativeScores() {
+        ScoreBoard board = new ScoreBoard();
+
+        board.startMatch("Mexico", "Canada");
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.updateScore("Mexico", "Canada", -1, 0));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.updateScore("Mexico", "Canada", 0, -5));
+    }
+
+    @Test
     void shouldUpdateMatchScore() {
         ScoreBoard board = new ScoreBoard();
 
@@ -58,6 +111,17 @@ public class ScoreBoardTest {
 
         assertEquals(0, match.getHomeScore());
         assertEquals(5, match.getAwayScore());
+    }
+
+    @Test
+    void shouldNotAllowUpdateAfterMatchFinished() {
+        ScoreBoard board = new ScoreBoard();
+
+        board.startMatch("Mexico", "Canada");
+        board.finishMatch("Mexico", "Canada");
+
+        assertThrows(IllegalArgumentException.class,
+                () -> board.updateScore("Mexico", "Canada", 2, 2));
     }
 
     @Test

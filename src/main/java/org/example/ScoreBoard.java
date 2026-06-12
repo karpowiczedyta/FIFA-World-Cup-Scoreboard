@@ -12,6 +12,12 @@ public class ScoreBoard {
     private final String UNDERSCORE = "_";
 
     public void startMatch(String homeTeam, String awayTeam) {
+        validateTeamName(homeTeam);
+        validateTeamName(awayTeam);
+
+        if (homeTeam.equalsIgnoreCase(awayTeam)) {
+            throw new IllegalArgumentException("Teams must be different");
+        }
 
         String key = buildMatchMapKey(homeTeam, awayTeam);
 
@@ -23,11 +29,19 @@ public class ScoreBoard {
     }
 
     public void finishMatch(String homeTeam, String awayTeam) {
-        matches.remove(buildMatchMapKey(homeTeam, awayTeam));
+        String matchKey = buildMatchMapKey(homeTeam, awayTeam);
+
+        if (!matches.containsKey(matchKey)) {
+            throw new IllegalArgumentException("Match does not exist");
+        }
+
+        matches.remove(matchKey);
     }
 
     public void updateScore(String homeTeam, String awayTeam,
                             int homeScore, int awayScore) {
+        validateScore(homeScore);
+        validateScore(awayScore);
 
         Match match = matches.get(buildMatchMapKey(homeTeam, awayTeam));
 
@@ -54,6 +68,22 @@ public class ScoreBoard {
     }
 
     private String buildMatchMapKey(String homeTeam, String awayTeam) {
-        return homeTeam + UNDERSCORE + awayTeam;
+        return normalize(homeTeam) + UNDERSCORE + normalize(awayTeam);
+    }
+
+    private String normalize(String team) {
+        return team.trim().toLowerCase();
+    }
+
+    private void validateTeamName(String team) {
+        if (team == null || team.trim().isEmpty()) {
+            throw new IllegalArgumentException("Team name cannot be null or blank");
+        }
+    }
+
+    private void validateScore(int score) {
+        if (score < 0) {
+            throw new IllegalArgumentException("Score cannot be negative");
+        }
     }
 }
