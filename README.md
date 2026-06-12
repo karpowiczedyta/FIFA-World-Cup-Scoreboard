@@ -30,7 +30,7 @@ Pobranie podsumowania
 
 Zwraca listę aktywnych meczów posortowaną według:
 1.Łącznej liczby zdobytych bramek (malejąco)
-2,Czasu rozpoczęcia meczu (od najnowszego), gdy suma bramek jest taka sama
+2.Czasu rozpoczęcia meczu (od najnowszego), gdy suma bramek jest taka sama
 
 Przykład
 Dla następujących aktywnych meczów:
@@ -52,11 +52,11 @@ Niemcy 2 - Francja 2
 Walidacja
 W projekcie zaimplementowano podstawowe mechanizmy walidacji:
 
--nazwy drużyn nie mogą być puste ani null,
--gospodarz i gość muszą być różnymi drużynami,
--nie można rozpocząć tego samego meczu więcej niż raz,
--wynik nie może być ujemny,
--nie można aktualizować lub zakończyć nieistniejącego meczu.
+- nazwy drużyn nie mogą być puste ani null,
+- gospodarz i gość muszą być różnymi drużynami,
+- nie można rozpocząć tego samego meczu więcej niż raz,
+- wynik nie może być ujemny,
+- nie można aktualizować lub zakończyć nieistniejącego meczu.
 - nazwy drużyn są normalizowane (trim() i toLowerCase()), dzięki czemu wartości takie jak:
     - Mexico
     - mexico
@@ -67,28 +67,26 @@ W projekcie zaimplementowano podstawowe mechanizmy walidacji:
 Testy
 Projekt został przygotowany zgodnie z podejściem TDD (Test-Driven Development).
 Testy jednostkowe obejmują:
--rozpoczęcie nowego meczu z początkowym wynikiem 0–0
--zakończenie meczu i usunięcie go z tablicy wyników
--aktualizację wyniku aktywnego meczu
--odrzucenie nazw drużyn o wartości null
--odrzucenie pustych nazw drużyn oraz nazw zawierających wyłącznie białe znaki
--uniemożliwienie rozpoczęcia meczu pomiędzy tą samą drużyną
--odrzucenie ujemnych wartości wyników
--próba rozpoczęcia meczu, który już istnieje
--próba zakończenia nieistniejącego meczu
--próba aktualizacji nieistniejącego meczu
--próba aktualizacji meczu po jego zakończeniu
--sortowanie według łącznej liczby zdobytych bramek (malejąco)
--poprawne rozstrzyganie remisów poprzez priorytet dla najpóźniej rozpoczętego meczu
--zgodność wyniku końcowego z przykładem przedstawionym w treści zadania
-
-Do implementacji testów wykorzystano framework JUnit 5.
+- rozpoczęcie nowego meczu z początkowym wynikiem 0–0
+- zakończenie meczu i usunięcie go z tablicy wyników
+- aktualizację wyniku aktywnego meczu
+- odrzucenie nazw drużyn o wartości null
+- odrzucenie pustych nazw drużyn oraz nazw zawierających wyłącznie białe znaki
+- uniemożliwienie rozpoczęcia meczu pomiędzy tą samą drużyną
+- odrzucenie ujemnych wartości wyników
+- próba rozpoczęcia meczu, który już istnieje
+- próba zakończenia nieistniejącego meczu
+- próba aktualizacji nieistniejącego meczu
+- próba aktualizacji meczu po jego zakończeniu
+- sortowanie według łącznej liczby zdobytych bramek (malejąco)
+- poprawne rozstrzyganie remisów poprzez priorytet dla najpóźniej rozpoczętego meczu
+- zgodność wyniku końcowego z przykładem przedstawionym w treści zadania
 
 Technologie:
-Java
-JUnit 6
+- Java
+- JUnit 6
 
 Możliwe usprawnienia:
-wykorzystanie własnych wyjątków,
-udostępnienie funkcjonalności poprzez REST API,
-integracja z bazą danych.
+- wykorzystanie własnych wyjątków,
+- udostępnienie funkcjonalności poprzez REST API,
+- integracja z bazą danych.
