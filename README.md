@@ -49,7 +49,7 @@ Podsumowanie powinno zwrócić:
 4. Argentyna 3 - Australia 1 [4]
 5. Niemcy 2 - Francja 2 [4]
 
-Walidacja
+Walidacja:
 W projekcie zaimplementowano podstawowe mechanizmy walidacji:
 
 - nazwy drużyn nie mogą być puste ani null,
