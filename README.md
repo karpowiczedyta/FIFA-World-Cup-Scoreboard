@@ -35,19 +35,19 @@ Zwraca listę aktywnych meczów posortowaną według:
 Przykład
 Dla następujących aktywnych meczów:
 
-Meksyk - Kanada: 0 - 5
-Hiszpania - Brazylia: 10 - 2
-Niemcy - Francja: 2 - 2
-Urugwaj - Włochy: 6 - 6
-Argentyna - Australia: 3 - 1
+- Meksyk - Kanada: 0 - 5
+- Hiszpania - Brazylia: 10 - 2
+- Niemcy - Francja: 2 - 2
+- Urugwaj - Włochy: 6 - 6
+- Argentyna - Australia: 3 - 1
 
 Podsumowanie powinno zwrócić:
 
-Urugwaj 6 - Włochy 6
-Hiszpania 10 - Brazylia 2
-Meksyk 0 - Kanada 5
-Argentyna 3 - Australia 1
-Niemcy 2 - Francja 2
+1. Urugwaj 6 - Włochy 6 [12]
+2. Hiszpania 10 - Brazylia 2 [12]
+3. Meksyk 0 - Kanada 5 [5]
+4. Argentyna 3 - Australia 1 [4]
+5. Niemcy 2 - Francja 2 [4]
 
 Walidacja
 W projekcie zaimplementowano podstawowe mechanizmy walidacji:
