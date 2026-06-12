@@ -67,20 +67,20 @@ W projekcie zaimplementowano podstawowe mechanizmy walidacji:
 Testy
 Projekt został przygotowany zgodnie z podejściem TDD (Test-Driven Development).
 Testy jednostkowe obejmują:
--rozpoczęcie nowego meczu z początkowym wynikiem 0–0,
--zakończenie meczu i usunięcie go z tablicy wyników,
--aktualizację wyniku aktywnego meczu,
--odrzucenie nazw drużyn o wartości null,
--odrzucenie pustych nazw drużyn oraz nazw zawierających wyłącznie białe znaki,
--uniemożliwienie rozpoczęcia meczu pomiędzy tą samą drużyną,
--odrzucenie ujemnych wartości wyników,
--próba rozpoczęcia meczu, który już istnieje,
--próba zakończenia nieistniejącego meczu,
--próba aktualizacji nieistniejącego meczu,
--próba aktualizacji meczu po jego zakończeniu,
--sortowanie według łącznej liczby zdobytych bramek (malejąco),
--poprawne rozstrzyganie remisów poprzez priorytet dla najpóźniej rozpoczętego meczu,
--zgodność wyniku końcowego z przykładem przedstawionym w treści zadania.
+-rozpoczęcie nowego meczu z początkowym wynikiem 0–0
+-zakończenie meczu i usunięcie go z tablicy wyników
+-aktualizację wyniku aktywnego meczu
+-odrzucenie nazw drużyn o wartości null
+-odrzucenie pustych nazw drużyn oraz nazw zawierających wyłącznie białe znaki
+-uniemożliwienie rozpoczęcia meczu pomiędzy tą samą drużyną
+-odrzucenie ujemnych wartości wyników
+-próba rozpoczęcia meczu, który już istnieje
+-próba zakończenia nieistniejącego meczu
+-próba aktualizacji nieistniejącego meczu
+-próba aktualizacji meczu po jego zakończeniu
+-sortowanie według łącznej liczby zdobytych bramek (malejąco)
+-poprawne rozstrzyganie remisów poprzez priorytet dla najpóźniej rozpoczętego meczu
+-zgodność wyniku końcowego z przykładem przedstawionym w treści zadania
 
 Do implementacji testów wykorzystano framework JUnit 5.
 
